@@ -18,7 +18,6 @@ const GridLightLayout = ({ cellVal, cellIndex, handleOnClick, selectOrder, activ
           : { backgroundColor: "inherit", border: "none" }
       }
     >
-        {console.log('selectOrder ---- ', selectOrder)}
     </div>
   );
 };

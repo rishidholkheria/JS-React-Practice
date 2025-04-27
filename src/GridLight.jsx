@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./GridLight.css";
 import GridLightLayout from "./GridLightLayout";
 
@@ -12,6 +12,8 @@ const GridLight = () => {
   const [selectOrder, setSelectOrder] = useState([]);
   const [active, setActive] = useState(true);
 
+  const [deactivating, setDeactivating] = useState(false);
+
   //   const handleOnClick = (cellIndex) => {
   //     if (!selectOrder.includes(cellIndex)) {
   //       let newArr = selectOrder   -------> THIS WAY NEWARR POINTS TO SAME MEMORY(selectOrder)
@@ -22,19 +24,22 @@ const GridLight = () => {
   //     console.log(selectOrder)
   //   };
 
-  const handleOnClick = (cellIndex) => {
-    if (!selectOrder.includes(cellIndex)) {
-      const newArr = [...selectOrder, cellIndex]; // <--- make a NEW array
-      setSelectOrder(newArr); // <--- React will now detect change
-    }
-
+  useEffect(() => {
     if (
-      matrix.flat().filter((cell) => cell === 1).length === selectOrder.length
+      matrix.flat().filter((cell) => cell === 1).length ===
+        selectOrder.length &&
+      !deactivating
     ) {
       setActive(false);
+      setDeactivating(true);
+      console.log(
+        "Deactivate : ",
+        matrix.flat().filter((cell) => cell === 1).length
+      );
+      console.log("Select ORder : ", selectOrder.length);
 
       //Deactivating...
-      setSelectOrder([...selectOrder].reverse());
+      //   setSelectOrder([...selectOrder].reverse());
       const interval = setInterval(() => {
         setSelectOrder((prev) => {
           const updated = [...prev];
@@ -48,14 +53,27 @@ const GridLight = () => {
         });
       }, 1000);
     }
+  }, [selectOrder]);
+
+  const handleOnClick = (cellIndex) => {
+    if (!selectOrder.includes(cellIndex)) {
+      const newArr = [...selectOrder, cellIndex]; // <--- make a NEW array
+      setSelectOrder(newArr); // <--- React will now detect change
+    }
   };
 
   return (
     <div className="gridLight">
       <h1>GridLight</h1>
+      {/* {console.log(selectOrder.length)} */}
+      {/* {console.log(
+        "MATRIX ",
+        matrix.flat().filter((cell) => cell === 1).length
+      )} */}
       <div className="gridBoard">
         {matrix.flat(1).map((cell, index) => (
           <GridLightLayout
+            key={index}
             cellVal={cell}
             cellIndex={index}
             handleOnClick={handleOnClick}
