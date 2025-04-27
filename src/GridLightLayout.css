@@ -1,0 +1,7 @@
+.gridCell{
+    width: 20px;
+    height: 20px;
+    padding: 40px;
+    border: 1px solid gray;
+    margin: 5px;
+}
