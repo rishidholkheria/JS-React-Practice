@@ -24,6 +24,7 @@ const GridLight = () => {
   //     console.log(selectOrder)
   //   };
 
+  debugger
   useEffect(() => {
     if (
       matrix.flat().filter((cell) => cell === 1).length ===
@@ -32,14 +33,8 @@ const GridLight = () => {
     ) {
       setActive(false);
       setDeactivating(true);
-      console.log(
-        "Deactivate : ",
-        matrix.flat().filter((cell) => cell === 1).length
-      );
-      console.log("Select ORder : ", selectOrder.length);
 
       //Deactivating...
-      //   setSelectOrder([...selectOrder].reverse());
       const interval = setInterval(() => {
         setSelectOrder((prev) => {
           const updated = [...prev];
@@ -53,7 +48,7 @@ const GridLight = () => {
         });
       }, 1000);
     }
-  }, [selectOrder]);
+  }, [selectOrder, active]);
 
   const handleOnClick = (cellIndex) => {
     if (!selectOrder.includes(cellIndex)) {
@@ -65,11 +60,11 @@ const GridLight = () => {
   return (
     <div className="gridLight">
       <h1>GridLight</h1>
-      {/* {console.log(selectOrder.length)} */}
-      {/* {console.log(
+      {console.log(selectOrder.length)}
+      {console.log(
         "MATRIX ",
         matrix.flat().filter((cell) => cell === 1).length
-      )} */}
+      )}
       <div className="gridBoard">
         {matrix.flat(1).map((cell, index) => (
           <GridLightLayout

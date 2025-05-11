@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Cart from './js-questions/cart'
 import GridLight from './GridLight'
+import ChipsInput from './ChipsInput'
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     <>
      {/* <h2>Hello</h2> */}
      {/* <Cart/> */}
-     <GridLight/>
+     {/* <GridLight/> */}
+     <ChipsInput/>
     </>
   )
 }
