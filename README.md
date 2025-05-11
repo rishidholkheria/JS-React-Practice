@@ -1,12 +1,25 @@
-# React + Vite
+# 🧪 JavaScript & React Practice-Repo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my **JavaScript & React Practice** repository! This is a collection of small applications and concept-based projects I've built to sharpen my skills in **JavaScript**, **React**, and modern frontend development.
 
-Currently, two official plugins are available:
+Each project focuses on a specific concept or feature and is built with simplicity and to get more clarity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Projects Included
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Project | Description |
+|--------|-------------|
+| 🌡️ **Temperature Converter** | A simple converter between Celsius and Fahrenheit. Demonstrates form handling and unit conversions in React. |
+| 🔲 **Grid Light Application** | A dynamic grid of lights that toggle states based on interaction. Helps practice state management and DOM manipulation. |
+| 💰 **Coin Value Showcase** | Mimics a coin display section like those in e-commerce platforms. Used for practicing list rendering. |
+| ➕ More coming soon... | I regularly add new mini-projects as I explore more concepts. |
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **JavaScript**
+- **Tailwind CSS** 
+- **Vite**
